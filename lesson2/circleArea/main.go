@@ -8,7 +8,11 @@ import (
 )
 
 func main() {
-	area, _ := getArea()
+	area, err := getArea()
+	if err != nil {
+		fmt.Println("Ошибка при получении площади окружности! Невозможно произвести вычисления!")
+		return
+	}
 	r := math.Sqrt(area / math.Pi)
 
 	fmt.Printf("Диаметр окружности равна: %.2f\n", 2*r)

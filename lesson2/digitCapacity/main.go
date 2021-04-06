@@ -14,7 +14,11 @@ const (
 func main() {
 	fmt.Print("Введите число из диапазона от 1 до 999: ")
 
-	number, _ := getNumber()
+	number, err := getNumber()
+	if err != nil {
+		fmt.Println("Ошибка при получении числа!")
+		return
+	}
 	fmt.Printf("Сотен: %v\nДесятков: %v\nЕдениц: %v", number/100, (number%100)/10, number%10)
 }
 

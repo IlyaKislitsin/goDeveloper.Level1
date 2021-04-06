@@ -8,10 +8,18 @@ import (
 
 func main() {
 	fmt.Print("Найдём площадь прямоугольника.\n", "Введите длину первой стороны: ")
-	a, _ := getNumber()
+	a, errorA := getNumber()
+	if errorA != nil {
+		fmt.Println("Ошибка при получении длины первой стороны! Невозможно вычислить площадь.")
+		return
+	}
 
 	fmt.Print("Введите длину второй стороны: ")
-	b, _ := getNumber()
+	b, errorB := getNumber()
+	if errorB != nil {
+		fmt.Println("Ошибка при получении длины второй стороны! Невозможно вычислить площадь.")
+		return
+	}
 
 	fmt.Printf("Площадь прямоугольника равна: %d", a*b)
 }
