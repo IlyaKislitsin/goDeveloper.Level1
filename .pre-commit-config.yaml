@@ -19,9 +19,9 @@ repos:
     #
     # Go Vet
     #
-    -   id: go-vet
-    -   id: go-vet-mod
-    -   id: go-vet-pkg
+    # -   id: go-vet
+    # -   id: go-vet-mod
+    # -   id: go-vet-pkg
     # -   id: go-vet-repo-mod
     # -   id: go-vet-repo-pkg
     #
