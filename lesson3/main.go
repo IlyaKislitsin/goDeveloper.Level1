@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"github.com/IlyaKislitsin/goDeveloper.Level1/lesson3/calculator"
+	"github.com/IlyaKislitsin/goDeveloper.Level1/lesson3/simple"
 )
 
 func main() {
@@ -23,6 +24,13 @@ func main() {
 		case 1:
 			calculator.Calculate()
 		case 2:
+			limit := 1000
+			simpleNumbers, err := simple.Find(int64(limit))
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Printf("Простые числа до %d: %v\n", limit, simpleNumbers)
+			}
 		case 0:
 		default:
 			fmt.Print("Неизвестная команда. Попробуйте ещё раз: : ")
