@@ -89,6 +89,9 @@ func calc(num1 int64, num2 int64, operator string) (int64, error) {
 	case "*":
 		result = num1 * num2
 	case "/":
+		if (num2 == 0) {
+			return result, fmt.Errorf("на 0 делить нельзя")
+		}
 		result = num1 / num2
 	default:
 		return result, fmt.Errorf("неизвестный оператор")
